@@ -27,7 +27,7 @@ public class basics
 
         JavascriptExecutor j1 = (JavascriptExecutor)driver;
         j1.executeScript("wndow.scrollBy()");
-        j1.executeScript("document.getElementById()");
+        j1.executeScript("document.getElementById().value='asd'");
         TakesScreenshot t1 = (TakesScreenshot)driver;
         File source = t1.getScreenshotAs(OutputType.FILE);
         File dest = new File("path");

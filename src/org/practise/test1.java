@@ -1,9 +1,20 @@
 package org.practise;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by ganesh on 12-11-2018.
@@ -13,9 +24,9 @@ public class test1
     public static void main(String[] args)
     {
         WebDriver driver= new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://www.flipkart.com/search?q=redmi6+mobile&sid=tyy%2C4io&as=on&as-show=on&otracker=AS_QueryStore_OrganicAutoSuggest_0_13&otracker1=AS_QueryStore_OrganicAutoSuggest_0_13&as-pos=0&as-type=HISTORY");
-        WebElement price = driver.findElement(By.xpath("//div[text()='Redmi 6 (Rose Gold, 64 GB)']/parent::div/following-sibling::div/div/div/div[1]"));
-        System.out.println(price.getText());
+        WebElement a = driver.findElement(By.id("454"));
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
     }
 }

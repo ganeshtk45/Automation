@@ -22,6 +22,11 @@ public class makeMyTripCurrentDate
         driver.manage().window().maximize();
         driver.get("https://www.makemytrip.com/");
         driver.findElement(By.xpath("//input[@id='hp-widget__depart']")).click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         driver.findElement(By.xpath("//span[text()='November']/parent::div/parent::div/following-sibling::table//a[text()="+d1+"]")).click();
     }
 }
